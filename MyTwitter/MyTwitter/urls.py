@@ -26,4 +26,5 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     
     path('', RedirectView.as_view(url='/Tweet/', permanent=True)),
+    
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

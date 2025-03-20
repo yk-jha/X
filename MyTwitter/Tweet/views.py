@@ -62,3 +62,23 @@ def register(request):
     else:
         form = UserRegistrationForm()
     return render(request , 'registration/register.html' , {'form' : form})
+
+@login_required
+def retweet(request, tweet_id):
+    original_tweet = get_object_or_404(Tweet, id=tweet_id)
+    
+    if not Tweet.objects.filter(user=request.user, retweet_from=original_tweet).exists():
+        Tweet.objects.create(user=request.user, retweet_from=original_tweet)
+    
+    return redirect('tweet_list')
+
+@login_required
+def like_tweet(request, tweet_id):
+    tweet = get_object_or_404(Tweet, id=tweet_id)
+    
+    if request.user in tweet.likes.all():
+        tweet.likes.remove(request.user)  # Unlike if already liked
+    else:
+        tweet.likes.add(request.user)  # Like the tweet
+    
+    return redirect('tweet_list')
