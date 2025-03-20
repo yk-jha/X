@@ -134,3 +134,5 @@ LOGIN_URL = '/accounts/login'
 LOGIN_REDIRECT__URL = '/Tweet/'
 
 LOGOUT_REDIRECT_URL = '/Tweet/'
+
+ALLOWED_HOSTS = ["MyTwittere.onrender.com", "localhost"]
