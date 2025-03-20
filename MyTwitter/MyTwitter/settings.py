@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-^e@_0gxe6cyy3)9(i=m7h%!2k*j4=6#gms9pcjw$=&+c+l=$vl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
+
 
 
 # Application definition
@@ -137,4 +138,4 @@ LOGIN_REDIRECT__URL = '/Tweet/'
 
 LOGOUT_REDIRECT_URL = '/Tweet/'
 
-ALLOWED_HOSTS = ["MyTwittere.onrender.com", "localhost"]
+
