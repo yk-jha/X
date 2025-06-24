@@ -57,7 +57,7 @@ WSGI_APPLICATION = 'MyTwitter.wsgi.application'
 # Database Configuration for PostgreSQL on Render
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL')
+        default=os.environ.get('DATABASE_URL')
     )
 }
 
